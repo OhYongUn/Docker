@@ -21,5 +21,11 @@ spec:
       containers:
         - name: second-node
           image: ohyongun/kub-first-app
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            periodSeconds: 10
+            initialDelaySeconds: 5
         # - name: ...
         #   image: ...
