@@ -2,12 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: second-app-deployment
+  labels:
+    group: example
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: second-app
       tier: backend
+    # matchExpressions: 
+    #   - {key: app, operator: NotIn, values: [second-app, first-app]}
   template:
     metadata: 
       labels:
@@ -16,6 +20,6 @@ spec:
     spec: 
       containers:
         - name: second-node
-          image: academind/kub-first-app:2
+          image: ohyongun/kub-first-app
         # - name: ...
         #   image: ...
