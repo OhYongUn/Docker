@@ -1,7 +1,7 @@
 version: "3"
 services:
   stories:
-    build: .
+    build: ../../../../../Downloads/kub-data-02-deployment-and-service
     volumes:
       - stories:/app/story
     ports:
