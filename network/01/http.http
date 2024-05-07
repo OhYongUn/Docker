@@ -1,3 +1,15 @@
+POST http://localhost:80/story
+Content-Type: application/json
+
+{
+  "text": "my text"
+}
+
+###
+GET http://localhost/story
+Accept: application/json
+
+###
 POST http://localhost:3000/favorites
 Content-Type: application/json
 

@@ -21,7 +21,8 @@ spec:
       containers:
         - name: second-node
           image: ohyongun/kub-first-app
-          livenessProbe:
+          imagePullPolicy: Always
+          livenessProbe: 
             httpGet:
               path: /
               port: 8080
