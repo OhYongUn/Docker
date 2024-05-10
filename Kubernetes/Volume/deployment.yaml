@@ -15,3 +15,9 @@ spec:
       containers:
         - name: story
           image: ohyongun/kub-data-demo
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-volume
+      volumes:
+        - name: story-volume
+          emptyDir: {}
