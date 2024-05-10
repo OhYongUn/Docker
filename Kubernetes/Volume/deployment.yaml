@@ -14,10 +14,12 @@ spec:
     spec:
       containers:
         - name: story
-          image: ohyongun/kub-data-demo
+          image: ohyongun/kub-data-demo:1
           volumeMounts:
             - mountPath: /app/story
               name: story-volume
       volumes:
         - name: story-volume
-          emptyDir: {}
+          hostPath:
+            path: /data
+            type: DirectoryOrCreate
