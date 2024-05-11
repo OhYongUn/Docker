@@ -14,12 +14,11 @@ spec:
     spec:
       containers:
         - name: story
-          image: ohyongun/kub-data-demo:1
+          image: ohyongun/kub-data-demo:2
           volumeMounts:
             - mountPath: /app/story
               name: story-volume
       volumes:
         - name: story-volume
-          hostPath:
-            path: /data
-            type: DirectoryOrCreate
+          persistentVolumeClaim:
+            claimName: host-pvc
