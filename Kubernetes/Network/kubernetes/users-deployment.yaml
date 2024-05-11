@@ -4,7 +4,7 @@ metadata:
   name: users-deployment
 spec:
   replicas: 1
-  selector:
+  selector: 
     matchLabels:
       app: users
   template:
@@ -14,4 +14,9 @@ spec:
     spec:
       containers:
         - name: users
-          image: ohyongun/kub-demo-users
+          image: ohyongun/kub-demo-users:latest
+          env:
+            - name: AUTH_ADDRESS
+              value: localhost
+        - name: auth
+          image: ohyongun/kub-demo-auth:latest

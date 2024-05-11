@@ -1,13 +1,15 @@
 version: "3"
 services:
   auth:
-    build: auth-api
+    build: ./auth-api
   users:
-    build: users-api
+    build: ./users-api
+    environment:
+      AUTH_ADDRESS: auth
     ports: 
       - "8080:8080"
   tasks:
-    build: tasks-api
+    build: ./tasks-api
     ports: 
       - "8000:8000"
     environment:
