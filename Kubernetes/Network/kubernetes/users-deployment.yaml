@@ -17,6 +17,5 @@ spec:
           image: ohyongun/kub-demo-users:latest
           env:
             - name: AUTH_ADDRESS
-              value: localhost
-        - name: auth
-          image: ohyongun/kub-demo-auth:latest
+              # value: "10.99.104.252"
+              value: "auth-service.default"
