@@ -1,0 +1,29 @@
+
+###
+POST   http://127.0.0.1:51848/signup
+Content-Type: application/json
+Authorization: Bearer abc
+
+
+{
+  "email": "test@test.com",
+  "password": "testers"
+}
+
+###
+POST http://127.0.0.1:50988/tasks
+Content-Type: application/json
+Authorization: Bearer abc
+
+{
+  "text": "1111",
+  "title": "2222"
+}
+###
+POST  http://127.0.0.1:50534/login
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "testers"
+}
