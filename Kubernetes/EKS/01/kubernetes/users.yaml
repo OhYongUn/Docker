@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: users
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       port: 80
@@ -27,9 +27,9 @@ spec:
     spec:
       containers:
         - name: users-api
-          image: academind/kub-dep-users:latest
+          image: ohyongun/kub-dep-users:latest
           env:
             - name: MONGODB_CONNECTION_URI
-              value: 'mongodb+srv://maximilian:wk4nFupsbntPbB3l@cluster0.ntrwp.mongodb.net/users?retryWrites=true&w=majority'
+              value: 'mongodb+srv://dhdyddjs:iwB8ZCsUsm07EFdF@cluster0.ntrwp.mongodb.net/users?retryWrites=true&w=majority'
             - name: AUTH_API_ADDRESSS
               value: 'auth-service.default:3000'
